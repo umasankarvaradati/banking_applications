@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        width: fit-content;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        text-align: center;
+        display: grid;
+      }
+
+      .button {
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+        padding: 10px;
+        border: none;
+        background-color: #28a745;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        width: fit-content;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to the Banking Application</h1>
+      <h2>Select the type of user</h2>
+
+      <a class="button" href="{% url 'admin_login' %}">Admin</a><br/>
+
+      <a class="button" href="{% url 'customer_login' %}">customer</a><br/>
+
+      <a class="button" href="{% url 'customer_setup' %}">customer setup</a>
+  
+    </div>
+  </body>
+</html>

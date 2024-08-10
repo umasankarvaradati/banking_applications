@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Customer Login</title>
+    <link rel="stylesheet" href="main.css"/>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+  }
+  .container {
+          width: fit-content;
+          margin: auto;
+          padding: 20px;
+          border: 1px solid #ccc;
+          border-radius: 10px;
+          text-align: center;
+          display: grid;
+          
+  }
+  button {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+      padding: 5px;
+      border: none;
+      background-color: #28a745;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      width: fit-content;
+      margin: auto;
+  }
+  .items {
+      margin: 20px;
+  }
+</style>
+  </head>
+  <body>
+    <div class="container">
+    <h2>Customer Login</h2>
+    <form method="POST">
+      {% csrf_token %}
+      <div slass="items">
+      <label for="account_no">Account No:</label>
+      <input type="text" name="account_no" required /><br />
+    </div>
+    <div class="items">
+      <label for="password">Password:</label>
+      <input type="password" name="password" required /><br />
+    </div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  </body>
+</html>

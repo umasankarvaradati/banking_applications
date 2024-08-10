@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Customer Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        width: fit-content;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        text-align: center;
+        display: grid;
+      }
+      .button {
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+        padding: 10px;
+        border: none;
+        background-color: #28a745;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        width: fit-content;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Customer Dashboard</h2>
+      <p>Account No: {{ customer.account_no }}</p>
+      <p>Balance: {{ customer.initial_balance }}</p>
+      <a class="button" href="{% url 'view_transactions' %}"
+        >View Transactions</a
+      ><br />
+      
+      <a class="button" href="{% url 'deposit'  %}">Deposit</a><br />
+
+      <a class="button" href="{% url 'withdraw' %}">Withdraw</a><br />
+      
+      <a class="button" href="{% url 'customer_logout' %}">Logout</a><br />
+      
+      <a class="button" href="{% url 'close_account' %}">Close Account</a>
+    </div>
+  </body>
+</html>

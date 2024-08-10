@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Dashboard</title>
+    <style>
+      
+      body {
+            font-family: Arial, sans-serif;
+            display: flex;
+        }
+      .container {
+            width: fit-content;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+            display: grid;
+        }
+        h1 {
+            text-align: center;
+        }
+       
+        .button {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            padding: 10px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            width: fit-content;
+            margin: auto;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+    <h1>Admin Dashboard</h1>
+    <a class="button" href="{% url 'add_customer' %}">Add Customer</a>
+     <div class="container">
+    <table align="center">
+      <tr >
+        <th>Full Name</th>&nbsp&nbsp
+        <th>Address</th>&nbsp&nbsp
+        <th>Mobile No</th>&nbsp&nbsp
+        <th>Email ID</th>&nbsp&nbsp
+        <th>Account Type</th>&nbsp&nbsp
+        <th>Initial Balance</th>&nbsp&nbsp
+        <th>DOB</th>&nbsp&nbsp
+        <th>ID Proof</th>&nbsp&nbsp&nbsp&nbsp
+        <th>Account no</th>&nbsp&nbsp
+        <th>passward</th>&nbsp&nbsp
+        <th>Actions</th>
+      </tr>
+      {% for customer in customers %}
+      <tr>
+        <td   >{{ customer.full_name }}</td>&nbsp&nbsp
+        <td>{{ customer.address }}</td>&nbsp&nbsp
+        <td>{{ customer.mobile_no }}</td>&nbsp&nbsp
+        <td>{{ customer.email_id }}</td>&nbsp&nbsp
+        <td>{{ customer.account_type }}</td>&nbsp&nbsp
+        <td>{{ customer.initial_balance }}</td>&nbsp&nbsp
+        <td>{{ customer.dob }}</td>&nbsp&nbsp
+        <td>{{ customer.id_proof }}</td>&nbsp&nbsp
+        <td>{{customer.account_no}}</td>&nbsp&nbsp
+        <td >{{customer.password }}</td>&nbsp&nbsp
+        <td>
+          <a href="{% url 'edit_customer' customer.id %}">Edit</a>
+          <a href="{% url 'delete_customer' customer.id %}">Delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+    </div>
+  </body>
+</html>

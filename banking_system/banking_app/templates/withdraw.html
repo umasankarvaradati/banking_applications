@@ -1,0 +1,65 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deposit</title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0 5px;
+        }
+        input {
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .button {
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+        padding: 10px;
+        border: none;
+        background-color: #28a745;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        width: fit-content;
+        margin: auto;
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Withdraw Funds</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="amount">Enter Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+            <button class="button" type="submit">Withdraw</button>
+        </form>
+        <br/>
+        <a class="button" href="{% url 'customer_dashboard' %}">Back to Dashboard</a>
+    </div>
+</body>
+</html>
